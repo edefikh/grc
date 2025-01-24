@@ -2,6 +2,7 @@
 Governance and Compliance Tips and tricks with automations
 Below is an example script to create a Conditional Access policy using the Microsoft Graph PowerShell module. This script assumes you are targeting users and requiring multi-factor authentication (MFA) as part of the policy.
 
+#enable conditional access script explained
 Prerequisites:
 Install the Microsoft Graph PowerShell module:
 powershell
