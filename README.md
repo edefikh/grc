@@ -1,4 +1,4 @@
-# grc
+# Collection of usefull scripts for MS Azure to harden tenant
 Governance and Compliance Tips and tricks with automations
 Below is an example script to create a Conditional Access policy using the Microsoft Graph PowerShell module. This script assumes you are targeting users and requiring multi-factor authentication (MFA) as part of the policy.
 
@@ -112,3 +112,32 @@ Notes:
 Replace placeholders like emergency_account@yourdomain.com and ensure your conditions and grants match your organization's requirements.
 Test the policy in a non-production environment before rolling it out to ensure it behaves as expected.
 Always exclude emergency accounts to avoid accidental lockouts.
+
+
+#screenlok script
+Steps to Deploy in Microsoft Azure
+Save the Script: Save the above script as Set-ScreenLock.ps1.
+
+Deploy to Azure-Managed Machines:
+
+If using Azure Intune, you can deploy this script as a custom script to managed devices:
+
+In the Azure Portal, navigate to Microsoft Intune > Devices > Scripts > Add.
+Upload the script and assign it to a device group.
+Alternatively, use Azure Automation to execute the script on managed machines:
+
+Set up a Runbook in Azure Automation and upload the script.
+Assign the Runbook to execute on target VMs.
+Run Locally for Testing:
+
+To test locally, open PowerShell as an Administrator and run the script.
+Validation
+Check Registry Settings:
+
+Navigate to HKEY_CURRENT_USER\Control Panel\Desktop using regedit and verify that:
+ScreenSaveTimeOut is 3600.
+ScreenSaveActive is 1.
+ScreenSaverIsSecure is 1.
+Test Lock Behavior:
+
+Wait for 60 minutes or lock the machine manually to confirm the password is required upon resume.
