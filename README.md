@@ -149,3 +149,12 @@ Prerequisites:
 Azure AD App Registration: Ensure you’ve registered an application in Azure AD with the necessary permissions to manage sensitivity labels.
 Permissions: The app should have delegated or application permissions for SecurityLabels.ReadWrite.All in Microsoft Graph.
 Microsoft.Graph Module: Install the Microsoft Graph PowerShell SDK (Install-Module Microsoft.Graph).
+
+
+Key Points:
+Replace placeholders like your-tenant-id, your-client-id, and your-client-secret with appropriate values from your Azure AD app registration.
+Ensure you have the appropriate permissions assigned to the app in Azure AD.
+This script uses Invoke-RestMethod to make a POST request to the Microsoft Graph API endpoint for sensitivity labels.
+Additional Notes:
+If you encounter authentication issues, ensure the Azure AD app registration has the correct API permissions and admin consent has been granted.
+Sensitivity label features depend on your Microsoft 365 licensing plan. Verify compatibility before deploying.
