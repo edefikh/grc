@@ -141,3 +141,11 @@ ScreenSaverIsSecure is 1.
 Test Lock Behavior:
 
 Wait for 60 minutes or lock the machine manually to confirm the password is required upon resume.
+
+
+Creating labels in Microsoft Purview can help you classify and protect data effectively. Below is a PowerShell script to create sensitivity labels in Microsoft Purview using the Microsoft Graph API and the required modules.
+
+Prerequisites:
+Azure AD App Registration: Ensure you’ve registered an application in Azure AD with the necessary permissions to manage sensitivity labels.
+Permissions: The app should have delegated or application permissions for SecurityLabels.ReadWrite.All in Microsoft Graph.
+Microsoft.Graph Module: Install the Microsoft Graph PowerShell SDK (Install-Module Microsoft.Graph).
